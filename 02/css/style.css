@@ -1,0 +1,15 @@
+.basic, .succses, .danger {
+  padding: 14px 30px;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+}
+
+.danger {
+  background-color: red;
+}
+
+.succses {
+  background-color: green;
+}/*# sourceMappingURL=style.css.map */

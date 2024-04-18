@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    background: transparent;
+    font-weight: normal;
+    text-decoration: none;
+    outline: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ol,
+ul {
+    list-style: none;
+}
+del {
+    text-decoration: line-through;
+}
+body {
+    font:{
+        family: "Circular-Std-Regular", Arial, Helvetica, sans-serif;
+        size: 17px;
+        weight: 400;
+    }
+    color: #1c2c40;
+    overflow-x: hidden;
+    min-width: 320px;
+}
+input,
+textarea,
+select {
+    font-family: "Circular-Std-Regular", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+a {
+    color: #1c2c40;
+}
+
+.thumb {
+    display: block;
+}
+.thumb img {
+    display: block;
+    width: 100%;
+}
+p {
+    line-height: 1.6em;
+    font-size: 16px;
+    font-family: "Circular-Std-Regular", Arial;
+    font-weight: 400;
+}
+.hidden {
+    display: none;
+}
+br.clear {
+    clear: both;
+    line-height: 0;
+}
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 980px;
+}
+@font-face {
+    font-family: "Circular-Std-Regular";
+    src: url("../fonts/CircularStd-Regular.woff2") format("woff2");
+    src: url("../fonts/CircularStd-Regular.woff") format("woff");
+    font-style: normal;
+}
+@font-face {
+    font-family: "Circular-Std-Bold";
+    src: url("../fonts/CircularStd-Bold.woff2") format("woff2");
+    src: url("../fonts/CircularStd-Bold.woff") format("woff");
+    font-style: normal;
+}
+::placeholder {
+    color: #d3cfcb;
+}
+$primary: #2DCA73;
+@mixin astyle{
+    color: #fff;
+	font-size: 21px;
+	font-weight: 500;
+}
+@mixin button-style{
+    background:$primary;
+    padding: 16px 32px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 21px;
+    font-weight: 500;
+    &:hover{
+        filter: alpha(opacity = 85);
+        -moz-opacity: 0.85;
+        -khtml-opacity: 0.85;
+        opacity: 0.85;
+    }
+}
+#home {
+    background:{
+        image:url(../images/bg.png);
+        repeat: no-repeat;
+        position: left center;
+        size: cover;
+    }
+	padding-bottom: 300px;
+    header {
+        height: 120px;
+	    display: flex;
+	    justify-content:space-between;
+	    align-items: center;
+        
+        div.left{
+            display: flex;
+	        justify-content: space-between;
+            h1 {
+                margin-right: 80px;
+                a{
+                    display: block;
+                    img{
+                        display: block;
+                        width: 100%;
+                    }
+                }
+            }
+            nav {
+                ul{
+                    display: flex;
+                    li{
+                        margin-right: 32px;
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        a{
+                            @include astyle();
+                            img{
+                                margin-left: 8px;
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        div.right{
+            ul{
+                display: flex;
+                align-items: center;
+                li{
+                    margin-right: 32px;
+                    a{
+                        @include astyle();
+                    }
+                    a.button{
+                       @include button-style();
+                    }
+                }
+            }
+        }
+        
+    }
+}
+#spotlight{
+    padding-top: 250px;
+	text-align: center;
+    h1 {
+        font-size: 78px;
+        font-weight: 700;
+        color: #fff;
+        max-width: 900px;
+        margin: 0 auto;
+        margin-bottom: 32px;
+    }
+    p{
+        font-size: 26px;
+        color: #fff;
+        font-weight: 600px;
+        margin-bottom: 80px;
+    }
+    form {
+        max-width: 900px;
+	    background: #fff;
+	    margin: 0 auto;
+	    border-radius: 8px;
+	    display: flex;
+	    height: 100px;
+	    align-items: center;
+        justify-content: center;
+        input[type="text"]{
+            width: 650px;
+            border:1px solid $primary;
+            height: 48px;
+            border-radius: 8px;
+            margin-right: 24px;
+            &::placeholder{
+                font-size: 21px;
+	            padding-left: 32px;
+                
+            }
+        }
+        input[type="submit"]{
+            @include button-style();
+        }
+    }
+}
